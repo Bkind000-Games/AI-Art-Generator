@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B45DD3CA2B8E262600D83712 /* AI_Art_GeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45DD3C92B8E262600D83712 /* AI_Art_GeneratorApp.swift */; };
+		B42339812B8F761900DD8520 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42339802B8F761900DD8520 /* Launch Screen.storyboard */; };
+		B45DD3CA2B8E262600D83712 /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45DD3C92B8E262600D83712 /* AppEntry.swift */; };
 		B45DD3CC2B8E262600D83712 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45DD3CB2B8E262600D83712 /* ContentView.swift */; };
 		B45DD3CE2B8E262700D83712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45DD3CD2B8E262700D83712 /* Assets.xcassets */; };
 		B45DD3D12B8E262700D83712 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45DD3D02B8E262700D83712 /* Preview Assets.xcassets */; };
+		B495E3012B90C96B008891C3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495E3002B90C96B008891C3 /* Models.swift */; };
+		B495E3032B90CA2B008891C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495E3022B90CA2B008891C3 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B42339802B8F761900DD8520 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		B42339822B8F76F600DD8520 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		B42339832B8F777F00DD8520 /* AI-Art-Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "AI-Art-Generator-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B45DD3C62B8E262600D83712 /* AI Art Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Art Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B45DD3C92B8E262600D83712 /* AI_Art_GeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI_Art_GeneratorApp.swift; sourceTree = "<group>"; };
+		B45DD3C92B8E262600D83712 /* AppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
 		B45DD3CB2B8E262600D83712 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B45DD3CD2B8E262700D83712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45DD3D02B8E262700D83712 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B495E3002B90C96B008891C3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B495E3022B90CA2B008891C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,15 @@
 		B45DD3C82B8E262600D83712 /* AI Art Generator */ = {
 			isa = PBXGroup;
 			children = (
-				B45DD3C92B8E262600D83712 /* AI_Art_GeneratorApp.swift */,
+				B42339822B8F76F600DD8520 /* Config.xcconfig */,
+				B42339832B8F777F00DD8520 /* AI-Art-Generator-Info.plist */,
+				B45DD3C92B8E262600D83712 /* AppEntry.swift */,
 				B45DD3CB2B8E262600D83712 /* ContentView.swift */,
 				B45DD3CD2B8E262700D83712 /* Assets.xcassets */,
 				B45DD3CF2B8E262700D83712 /* Preview Content */,
+				B42339802B8F761900DD8520 /* Launch Screen.storyboard */,
+				B495E3002B90C96B008891C3 /* Models.swift */,
+				B495E3022B90CA2B008891C3 /* APIService.swift */,
 			);
 			path = "AI Art Generator";
 			sourceTree = "<group>";
@@ -125,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B42339812B8F761900DD8520 /* Launch Screen.storyboard in Resources */,
 				B45DD3D12B8E262700D83712 /* Preview Assets.xcassets in Resources */,
 				B45DD3CE2B8E262700D83712 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B495E3012B90C96B008891C3 /* Models.swift in Sources */,
 				B45DD3CC2B8E262600D83712 /* ContentView.swift in Sources */,
-				B45DD3CA2B8E262600D83712 /* AI_Art_GeneratorApp.swift in Sources */,
+				B495E3032B90CA2B008891C3 /* APIService.swift in Sources */,
+				B45DD3CA2B8E262600D83712 /* AppEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +163,7 @@
 /* Begin XCBuildConfiguration section */
 		B45DD3D22B8E262700D83712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42339822B8F76F600DD8520 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -207,6 +224,7 @@
 		};
 		B45DD3D32B8E262700D83712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42339822B8F76F600DD8520 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -269,6 +287,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AI Art Generator/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AI-Art-Generator-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +316,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AI Art Generator/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AI-Art-Generator-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
