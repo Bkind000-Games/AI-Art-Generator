@@ -5,13 +5,13 @@
 //  Created by Kind, Braeden on 2/29/24.
 //
 
-import Foundation
+import UIKit
 
 class APIService {
     let baseURL = "https://api.openai.com/v1/images/"
     let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String
     
-    func fetchImages(with data: Data) async throws {
+    func fetchImages(with data: Data) async throws -> ResponseModel {
         guard let apiKey else { fatalError("Failed to get APIKey.")}
         guard let url = URL(string: baseURL + "generations") else {
             fatalError("ERROR: Invalid URL")
@@ -25,6 +25,24 @@ class APIService {
         guard (response as? HTTPURLResponse) != nil else {
             fatalError("ERROR: Data Request has failed.")
         }
-        print(String(decoding: data, as: UTF8.self))
+        do {
+            return try JSONDecoder().decode(ResponseModel.self, from: data)
+        } catch {
+            throw error
+        }
+    }
+    
+    func loadImage(at url: URL) async -> UIImage? {
+        let request = URLRequest(url: url)
+        do {
+            let (data,response) = try await URLSession.shared.data(for: request)
+            guard (response as? HTTPURLResponse) != nil else {
+                fatalError("ERROR: Data Request has failed.")
+            }
+            return UIImage(data: data)
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
 }
