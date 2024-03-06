@@ -41,11 +41,12 @@ struct DALLEImagesView: View {
                             .frame(width: 256, height: 256)
                     }
                     if vm.urls.isEmpty {
-                        Text("The more descriptive you can be, the better the results!")
+                        Text("The more descriptive you are, the better the results, and vice versa!")
                         TextField("Image Description....",text: $vm.prompt,axis: .vertical)
                             .textFieldStyle(.roundedBorder)
                             .padding(.horizontal)
                         Form {
+                            Text("If the response your looking for is not listed, you can always leave it none and type it in the description box.")
                             Picker("Image Style",selection: $vm.imageStyle) {
                                 ForEach(ImageStyle.allCases, id: \.self) { imageStyle in
                                     Text(imageStyle.rawValue)
@@ -80,8 +81,14 @@ struct DALLEImagesView: View {
                     } else {
                         Text("Your Description: " + vm.description)
                             .padding()
-                        Button("Try another") {
-                            vm.reset()
+                        HStack {
+                            Button("Get Variations") {
+                                vm.fetchVariations()
+                            }
+                                .disabled(vm.selectedImage == nil)
+                            Button("Go Back") {
+                                vm.reset()
+                            }
                         }
                         .buttonStyle(.borderedProminent)
                     }
